@@ -16,35 +16,35 @@ function getComponentsTime(time){
 }
 
 
-// const myBirthdayDate = new Date('Jun 30, 2021').getTime();
+const myBirthdayDate = new Date('Jun 30, 2021').getTime();
 
-// function Timer({selector}) {
-//     let id = 0;
-//     document.querySelector(selector)
-//         .insertAdjacentHTML('beforeend', template('0:0:0:0'));
+function Timer({selector}) {
+    let id = 0;
+    document.querySelector(selector)
+        .insertAdjacentHTML('beforeend', template('0:0:0:0'));
 
-//     const valueRef = document.querySelector(`${selector} .value`);
+    const valueRef = document.querySelector(`${selector} .value`);
 
-//     const updateValue = (value) => {
-//         valueRef.textContent = value;
-//     }
+    const updateValue = (value) => {
+        valueRef.textContent = value;
+    }
 
-//     this.start = () => {
-//         if(id) {
-//             return;
-//         }
-//         id = setInterval(() => {
-//             const diff = myBirthdayDate - Date.now();
-//             const days = days(diff);
-//             const hours = hours(diff);
-//             const mins = mins(diff);
-//             const seconds = secs(diff);
-//             updateValue(`${days} days ${hours} hours ${mins} mins ${seconds} seconds`);
-//         }, 100);
-//     };
+    this.start = () => {
+        if(id) {
+            return;
+        }
+        id = setInterval(() => {
+            const diff = myBirthdayDate - Date.now();
+            const days = days(diff);
+            const hours = hours(diff);
+            const mins = mins(diff);
+            const seconds = secs(diff);
+            updateValue(`${days} days ${hours} hours ${mins} mins ${seconds} seconds`);
+        }, 100);
+    };
 
-//     this.stop = () => {
-//         clearTimeout(id);
-//         id = 0;
-//     }
-// }
+    this.stop = () => {
+        clearTimeout(id);
+        id = 0;
+    }
+}
